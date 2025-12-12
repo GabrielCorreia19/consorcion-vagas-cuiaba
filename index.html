@@ -31,7 +31,7 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        position: absolute;
+        margin-right: 20px;
       }
 
       .logo-container img {
@@ -44,7 +44,8 @@
       }
 
       .header {
-        text-align: center;
+        display: flex;
+        align-items: center;
         color: #fff;
         margin-bottom: 40px;
         padding: 30px;
@@ -206,7 +207,7 @@
 
       .highlight-box h3 {
         font-size: 1.8em;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
       }
 
       .highlight-box p {
@@ -229,6 +230,17 @@
       }
 
       @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .logo-container {
+          margin-bottom: 20px;
+          margin-right: 0;
+          width: 100%;
+        }
+
         .header h1 {
           font-size: 1.8em;
         }
@@ -253,8 +265,11 @@
             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'logo-text\'>DECISÃO BRASIL RH</div>';"
           />
         </div>
-        <h1>🏗️ CONSÓRCIO CENTRO DE EVENTOS MT</h1>
-        <p>Vagas para Construção Civil | Salvador → Cuiabá</p>
+        <div>
+                                                  <div style="text-align: center">
+                                                    <h1>🏗️ CONSÓRCIO CENTRO DE EVENTOS MT</h1>
+                                                    <p>Vagas para Construção Civil | Salvador → Cuiabá</p>
+                                                  </div>        </div>
       </div>
 
       <div class="cards-container">
@@ -368,17 +383,22 @@
           <h3>📍 Salvador → Cuiabá</h3>
           <p>Toda estrutura garantida para você trabalhar com tranquilidade!</p>
           <p>
-            <a href="mailto:contato@decisaobrasil.com.br"
+            <a
+              href="mailto:contato@decisaobrasil.com.br"
+              style="margin-right: 15px"
               ><i class="fas fa-envelope"></i> Envie seu curriculo para
               <strong>contato@decisaobrasil.com.br</strong></a
             >
           </p>
           <p>
             <a
-              href="httpsa://api.whatsapp.com/send?phone=5571999992091"
+              href="https://api.whatsapp.com/send?phone=5571999992091"
               target="_blank"
-              ><i class="fab fa-whatsapp"></i> Ou entre em contato no número
-              <strong>+55 (71)9 9999-2091</strong></a
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a href="tel:+5571999992091">
+              Ou entre em contato no número
+              <strong>(71)9 9991-2091</strong></a
             >
           </p>
         </div>
