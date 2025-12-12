@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Vagas Construção Civil</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #2a3870 0%, #1a2450 100%);
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .logo-container {
+        width: 150px;
+        height: 64px;
+        background: white;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: absolute;
+      }
+
+      .logo-container img {
+        width: 180px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+      }
+
+      .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #be8c3f;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .header p {
+        font-size: 1.2em;
+        opacity: 0.9;
+      }
+
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-top: 5px solid #be8c3f;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(190, 140, 63, 0.3);
+      }
+
+      .card-title {
+        font-size: 2em;
+        color: #2a3870;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #be8c3f;
+        text-align: center;
+      }
+
+      .salary-highlight {
+        background: linear-gradient(135deg, #2a3870, #3a4880);
+        color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 25px;
+        box-shadow: 0 5px 15px rgba(42, 56, 112, 0.3);
+      }
+
+      .salary-highlight .total {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #be8c3f;
+        margin-top: 10px;
+      }
+
+      .salary-highlight .label {
+        font-size: 0.9em;
+        opacity: 0.9;
+      }
+
+      .details-section {
+        margin-top: 20px;
+      }
+
+      .detail-item {
+        padding: 15px;
+        margin-bottom: 15px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #be8c3f;
+      }
+
+      .detail-item h3 {
+        color: #2a3870;
+        font-size: 1.1em;
+        margin-bottom: 8px;
+      }
+
+      .detail-item p {
+        color: #555;
+        line-height: 1.6;
+        margin: 5px 0;
+      }
+
+      .benefit-tag {
+        display: inline-block;
+        background: #be8c3f;
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        margin: 5px 5px 5px 0;
+      }
+
+      .info-section {
+        background: #fff;
+        border-radius: 20px;
+        padding: 40px;
+        margin-top: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .info-section h2 {
+        color: #2a3870;
+        font-size: 2em;
+        margin-bottom: 25px;
+        text-align: center;
+        border-bottom: 3px solid #be8c3f;
+        padding-bottom: 15px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+      }
+
+      .info-card {
+        background: linear-gradient(135deg, #2a3870, #3a4880);
+        color: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(42, 56, 112, 0.3);
+      }
+
+      .info-card h3 {
+        color: #be8c3f;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+
+      .info-card p {
+        line-height: 1.6;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #be8c3f, #cea05f);
+        color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 30px;
+        box-shadow: 0 10px 30px rgba(190, 140, 63, 0.4);
+      }
+
+      .highlight-box h3 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      .highlight-box p {
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .highlight-box a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .highlight-box a:hover {
+        text-decoration: underline;
+      }
+
+      .highlight-box i {
+        margin-right: 8px;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 1.8em;
+        }
+
+        .cards-container {
+          grid-template-columns: 1fr;
+        }
+
+        .card-title {
+          font-size: 1.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo-container">
+          <img
+            src="fcf54fcd-b290-4e09-97a6-0e6dab580c79-removebg-preview.png"
+            alt="Decisão Brasil RH"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'logo-text\'>DECISÃO BRASIL RH</div>';"
+          />
+        </div>
+        <h1>🏗️ CONSÓRCIO CENTRO DE EVENTOS MT</h1>
+        <p>Vagas para Construção Civil | Salvador → Cuiabá</p>
+      </div>
+
+      <div class="cards-container">
+        <!-- SERVENTE -->
+        <div class="card">
+          <div class="card-title">SERVENTE DE OBRAS</div>
+
+          <div class="salary-highlight">
+            <div class="label">REMUNERAÇÃO TOTAL</div>
+            <div class="total">R$ 3.250</div>
+            <div class="label">Salário + Benefícios (sem Horas Extras)</div>
+          </div>
+
+          <div class="details-section">
+            <div class="detail-item">
+              <h3>💰 Salário Base</h3>
+              <p>R$ 1.779,00</p>
+            </div>
+
+            <div class="detail-item">
+              <h3>🎁 Plano de Incentivo</h3>
+              <p><strong>VR FLEX:</strong></p>
+              <p>• R$ 500,00 de incentivo</p>
+              <p>• R$ 700,00 - R$ 800,00 para alimentação</p>
+              <p>• R$ 210,00 de assiduidade</p>
+              <p style="margin-top: 10px; font-size: 0.9em; color: #666">
+                Alimentação: Almoço/Janta R$22,00 | Café R$7,00
+              </p>
+            </div>
+
+            <div class="detail-item">
+              <h3>⏰ Horas Extras</h3>
+              <p>• 100% em sábados, domingos e feriados</p>
+              <p>• Primeiras 2h: 50% | Demais: 65%</p>
+            </div>
+
+            <div class="detail-item">
+              <h3>🏖️ Baixadas</h3>
+              <p>• 1ª baixada: 120 dias</p>
+              <p>• Demais: 90 dias</p>
+              <p><strong>Compra da baixada: R$ 800,00</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- OFICIAL -->
+        <div class="card">
+          <div class="card-title">OFICIAL</div>
+
+          <div class="salary-highlight">
+            <div class="label">REMUNERAÇÃO TOTAL</div>
+            <div class="total">R$ 4.650</div>
+            <div class="label">Salário + Benefícios (sem Horas Extras)</div>
+          </div>
+
+          <div class="details-section">
+            <div class="detail-item">
+              <h3>💰 Salário Base</h3>
+              <p>R$ 2.389,00</p>
+            </div>
+
+            <div class="detail-item">
+              <h3>🎁 Plano de Incentivo</h3>
+              <p><strong>VR FLEX:</strong></p>
+              <p>• R$ 800,00 de incentivo</p>
+              <p>• R$ 700,00 - R$ 800,00 para alimentação</p>
+              <p>• R$ 210,00 de assiduidade</p>
+              <p style="margin-top: 10px"><strong>CONTRACHEQUE:</strong></p>
+              <p>• R$ 500,00 de incentivo adicional</p>
+              <p style="margin-top: 10px; font-size: 0.9em; color: #666">
+                Alimentação: Almoço/Janta R$22,00 | Café R$7,00
+              </p>
+            </div>
+
+            <div class="detail-item">
+              <h3>⏰ Horas Extras</h3>
+              <p>• 100% em sábados, domingos e feriados</p>
+              <p>• Primeiras 2h: 50% | Demais: 65%</p>
+            </div>
+
+            <div class="detail-item">
+              <h3>🏖️ Baixadas</h3>
+              <p>• 1ª baixada: 120 dias (4 meses)</p>
+              <p>• Demais: 90 dias (3 meses)</p>
+              <p><strong>Compra da baixada: R$ 1.000,00</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>✈️ ESTRUTURA E LOGÍSTICA</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>🛫 Transporte</h3>
+            <p>Passagem por conta do Consórcio (Ônibus ou Avião)</p>
+          </div>
+
+          <div class="info-card">
+            <h3>🚌 Logística Local</h3>
+            <p>Transporte fornecido pela empresa (Ônibus da empresa)</p>
+          </div>
+
+          <div class="info-card">
+            <h3>🏨 Hospedagem</h3>
+            <p>Hotel da empresa + todo suporte necessário</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h3>📍 Salvador → Cuiabá</h3>
+          <p>Toda estrutura garantida para você trabalhar com tranquilidade!</p>
+          <p>
+            <a href="mailto:contato@decisaobrasil.com.br"
+              ><i class="fas fa-envelope"></i> Envie seu curriculo para
+              <strong>contato@decisaobrasil.com.br</strong></a
+            >
+          </p>
+          <p>
+            <a
+              href="httpsa://api.whatsapp.com/send?phone=5571999992091"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i> Ou entre em contato no número
+              <strong>+55 (71)9 9999-2091</strong></a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
